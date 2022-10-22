@@ -1,4 +1,49 @@
+/* you can customise the above line... */
+/* @use '../util/ as u */
+/* 
+    the boilerplate will only be looking for the
+    index.scss inside the util folder
+    u.$font; ... u for util.
+ */
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: hsl(0deg, 0%, 13%);
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif; /* Arial, Helvetica, sans-serif */
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* 
+    Compound Selector: multiple selectors seperated by a comma 
+*/
+h1, h2, h3 {
+  font-weight: 700; /* bold */
+  line-height: 1.1; /* 110% */
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none; /* no underline */
+}
+
+:root {
+  --background-color: hsl(0, 0%, 13%);
+  --text-color: hsl(0, 0%, 100%);
 }/*# sourceMappingURL=style.css.map */
