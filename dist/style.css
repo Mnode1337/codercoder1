@@ -87,6 +87,14 @@ a:active {
   --text-color: hsl(0, 0%, 100%);
 }
 
+.magenta {
+  background-color: hsl(300deg, 100%, 30%);
+}
+
+.green {
+  background-color: hsl(120deg, 100%, 27%);
+}
+
 /* %widget {
 	padding: u.rem(16);
 } */
@@ -145,10 +153,4 @@ a:active {
 }
 .grid__widget {
   padding: 1rem;
-}
-.grid__widget--magenta {
-  background-color: hsl(300deg, 100%, 30%);
-}
-.grid__widget--green {
-  background-color: hsl(120deg, 100%, 27%);
 }/*# sourceMappingURL=style.css.map */

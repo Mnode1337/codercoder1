@@ -1,0 +1,37 @@
+@use 'functions' as f;
+
+// 700px, 900px, 1440px
+
+// sass map, em is best for media queries
+
+// 1em -> 16px base unit
+
+$breakpoints-up: (
+    "medium": f.em(700), // 43.75em, /* 700 / 16 = 43.75em */
+    "large": f.em(900), // 56.25em, /* 900 / 16 = 56 */
+    "xlarge": f.em(1440), // 90em,/* 1440 / 16 = 90 */
+);
+
+// 699.98px, 899.98px, 1439.98px
+$breakpoints-down: (
+    'small': f.em(699.98), // 43.7485em,
+    'medium': f.em(899.98), // 56.24875em,
+    'large': f.em(1439.98), // 89.99875em,
+);
+
+@mixin breakpoint($size) {
+
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+
+}
+
+@mixin breakpoint-down($size) {
+
+    /* map is a sass fuction */
+    @media (max-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
+
+}
