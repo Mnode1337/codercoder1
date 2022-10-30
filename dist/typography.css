@@ -1,0 +1,18 @@
+/* 
+    Compound Selector: multiple selectors seperated by a comma 
+*/
+h1, h2, h3 {
+  font-weight: 700; /* bold */
+  line-height: 1.1; /* 110% */
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none; /* no underline */
+}/*# sourceMappingURL=typography.css.map */

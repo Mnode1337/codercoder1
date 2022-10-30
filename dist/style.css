@@ -1,3 +1,11 @@
+/**
+ * font-size: rem(30)
+   Throw an error if the parameter has a unit.
+ */
+/* so that it will load our breakpoints file */
+/* 
+    @use rule allows us to load modules in sass.
+ */
 /* you can customise the above line... */
 /* @use '../util/ as u */
 /* 
@@ -22,19 +30,50 @@ body {
   font-family: "Open Sans", sans-serif; /* Arial, Helvetica, sans-serif */
   background-color: var(--background-color);
   color: var(--text-color);
+  /* display: grid;
+  // horizontal alignment
+  justify-content: center; */
 }
 
 /* 
+    import util module.
+ */
+/* 
     Compound Selector: multiple selectors seperated by a comma 
 */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 700; /* bold */
   line-height: 1.1; /* 110% */
   margin-top: 0;
 }
 
+/* 
+    keep in mind that our default
+    style is for mobile viewport
+*/
+h1 {
+  font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+  /*
+      @include u.breakpoint(medium) {
+          font-size: 36px;
+      }
+
+      @include u.breakpoint(large) {
+          font-size: 42px;
+      }
+
+  */
+}
+
+h2 {
+  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
+}
+
 p {
   margin-top: 0;
+  font-size: 1rem;
 }
 
 a,
@@ -48,15 +87,37 @@ a:active {
   --text-color: hsl(0, 0%, 100%);
 }
 
+/* %widget {
+	padding: u.rem(16);
+} */
+/**
+    custome name in sass.
+ */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
-  gap: 40px; /* 40/16 = 2.5rem */
+  gap: 2.5rem; /* 40/16 = 2.5rem */
+  width: min(100% - 2.5rem, 62.5rem);
+  margin-inline: auto;
+  /* @media (min-width: 900px) {
+  // when the viewport is 900px and up
+          grid-template-columns: 2fr 1fr;
+          grid-template-rows: auto;
+          //padding-left: 0;
+          //padding-right: 0;
+      } */
 }
-@media (min-width: 900px) {
+@media (min-width: 56.25em) {
   .grid {
     grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+@media (max-width: 899px) {
+  .grid {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 .grid__main, .grid__sidebar {
@@ -66,5 +127,28 @@ a:active {
   background-color: hsl(240deg, 99%, 33%);
 }
 .grid__sidebar {
+  /* @media (max-width: 56.25em) {
+            text-align: center;
+        } */
+  /* map is a sass fuction */
+  /* map is a sass fuction */
+}
+@media (max-width: 56.24875em) {
+  .grid__sidebar {
+    text-align: center;
+  }
+}
+@media (max-width: 43.74875em) {
+  .grid__sidebar {
+    text-align: right;
+  }
+}
+.grid__widget {
+  padding: 1rem;
+}
+.grid__widget--magenta {
   background-color: hsl(300deg, 100%, 30%);
+}
+.grid__widget--green {
+  background-color: hsl(120deg, 100%, 27%);
 }/*# sourceMappingURL=style.css.map */

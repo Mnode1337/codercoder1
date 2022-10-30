@@ -1,4 +1,8 @@
-@use '../util/' as u; 
+/* 
+    @use rule allows us to load modules in sass.
+ */
+
+@use '../util/' as u;
 /* you can customise the above line... */
 /* @use '../util/ as u */
 /* 
@@ -9,7 +13,7 @@
 
 html {
     box-sizing: border-box;
-    font-size: 100%;
+    font-size: 100%;// 62.5%; 
 }
 
 *,
@@ -24,5 +28,8 @@ body {
     font-family: u.$font;/* Arial, Helvetica, sans-serif */
     background-color: var(--background-color);
     color: var(--text-color);
+    /* display: grid;
+    // horizontal alignment
+    justify-content: center; */
 }
 
